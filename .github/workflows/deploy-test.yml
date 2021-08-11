@@ -14,6 +14,7 @@ jobs:
         with:
           version: 2
           php_version: 7.1
+          php_extensions: zip gd
           dev: no
           ssh_key: ${{ secrets.SSH_KEY }}
           ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
