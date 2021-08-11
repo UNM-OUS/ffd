@@ -3,7 +3,7 @@ on: push
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment: test
     steps:
       - uses: shimataro/ssh-key-action@v2
         with:
