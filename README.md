@@ -1,2 +1,0 @@
-# Website - freshmanconvocation.unm.edu
-
