@@ -1,0 +1,21 @@
+events:
+  email:
+      from: graduation@unm.edu
+  forms:
+    presets:
+      ffd-students-2021:
+        contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
+        ffd: ${module.namespace}\Chunks\FFDConvocation
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      ffd-faculty-2021:
+        contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
+        unm: Digraph\Modules\ous_event_management\Chunks\UNMAffiliation
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver
+      volunteers-2021:
+        contact: Digraph\Modules\ous_event_management\Chunks\Contact\ContactInformation
+        ffd: ${module.namespace}\Chunks\ShirtSize
+        unm: Digraph\Modules\ous_event_management\Chunks\UNMAffiliation
+        spa: Digraph\Modules\ous_event_management\Chunks\SpecialAssistance
+        waiver: Digraph\Modules\ous_event_management\Chunks\jSignature\Waiver

@@ -1,0 +1,39 @@
+# Default contents of packages
+package:
+  defaults:
+    fields:
+      site_name: First-Year Family Day
+
+# Specify a time zone if you want to override your server's default
+timezone: America/Denver
+
+users:
+  defaultmanager: netid
+
+actions:
+  uiforguests: false
+
+# gd, imagick or gmagick -- gd is the default because it's widely supported
+image:
+  driver: gd
+
+# Generally if you want to move your storage/cache directories you should keep
+# them somehow relative to paths.site
+paths:
+  storage: ${paths.site}/digraph/storage
+  cache: ${paths.site}/digraph/cache
+
+# Template helper options
+templates:
+  # templates.theme can be either a single theme name or an array of theme names
+  # that will have their css/js included after core code, in the given order
+  # theme: [digraph-basic,digraph-colors-dark]
+  theme: [unm-v1]
+
+navigation:
+  menus:
+    main:
+      - home
+      - past
+      - upcoming
+      - contact

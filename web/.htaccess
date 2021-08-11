@@ -1,0 +1,28 @@
+Redirect 301 /annualreports.html https://secretary.unm.edu/annual-report/
+Redirect 301 /conference-rooms/index.html https://secretary.unm.edu/conference-rooms/
+Redirect 301 /conferencerms.html https://secretary.unm.edu/conference-rooms/
+Redirect 301 /contact/index.html https://secretary.unm.edu/contact/
+Redirect 301 /notaries.html https://secretary.unm.edu/notaries/
+Redirect 301 /recognition-and-awards/honorary-degrees.html https://secretary.unm.edu/recognition-and-awards/honorary-degrees/
+Redirect 301 /recognition-and-awards/regents-awards-recipients.html https://secretary.unm.edu/recognition-and-awards/regents-awards/
+Redirect 301 /recognition-and-awards/university-medal.html https://secretary.unm.edu/recognition-and-awards/university-medal/
+Redirect 301 /regentsawards.html https://secretary.unm.edu/recognition-and-awards/regents-awards-recipients.html
+Redirect 301 /seal/index.html https://secretary.unm.edu/seal/
+Redirect 301 /staff.html https://secretary.unm.edu/contact/
+Redirect 301 /univmedals.html https://secretary.unm.edu/recognition-and-awards/university-medal.html
+Redirect 301 /unmseal.html https://secretary.unm.edu/seal/
+
+# BEGIN DIGRAPH-MANAGED: HTACCESS
+# Do not edit this code, it will be replaced whenever composer update/install runs
+# digraph-project-core/files/htaccess => web/.htaccess
+
+# rewriting to redirect urls to digraph
+<IfModule mod_rewrite.c>
+  DirectoryIndex index.html index.php
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^([^?]*)$ index.php?digraph_url=$1 [NC,L,QSA]
+</IfModule>
+
+# END DIGRAPH-MANAGED: HTACCESS

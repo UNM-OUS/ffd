@@ -1,0 +1,65 @@
+{
+    "name": "unmous/freshmanconvocation.unm.edu",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "digraphcms/digraph-project-core": "~1",
+        "oomphinc/composer-installers-extender": "^1.1|^2",
+        "unmous/ous_digraph_module": "dev-main",
+        "unmous/ous_event_management": "dev-main",
+        "unmous/ous_event_regalia": "dev-main"
+    },
+    "autoload": {
+        "classmap": [
+            "digraph/scripts/"
+        ]
+    },
+    "config": {
+        "vendor-dir": "digraph/vendor/",
+        "sort-packages": true,
+        "platform": {
+            "php": "7.1.21"
+        }
+    },
+    "extra": {
+        "installer-types": [
+            "digraph-core",
+            "digraph-module",
+            "digraph-web"
+        ],
+        "installer-paths": {
+            "digraph/core/{$name}/": [
+                "type:digraph-core"
+            ],
+            "digraph/modules/{$name}/": [
+                "type:digraph-module"
+            ],
+            "web/": [
+                "type:digraph-web"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "DigraphProject\\Scripts\\Composer::installHandler"
+        ],
+        "post-update-cmd": [
+            "DigraphProject\\Scripts\\Composer::updateHandler"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/UNM-OUS/ous_digraph_module"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/UNM-OUS/ous_event_management"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/UNM-OUS/ous_event_regalia"
+        }
+    ]
+}
