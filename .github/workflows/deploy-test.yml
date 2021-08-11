@@ -1,8 +1,9 @@
-name: deploy
+name: Deploy to test
 on: push
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: test
     steps:
       - uses: shimataro/ssh-key-action@v2
         with:
@@ -13,13 +14,14 @@ jobs:
         with:
           version: 2
           php_version: 7.1
+          php_extensions: zip gd
           dev: no
           ssh_key: ${{ secrets.SSH_KEY }}
           ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
       - name: Enter maintenance mode
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: touch ${{ secrets.TARGET_TEST }}/.maintenance
+          command: touch ${{ secrets.TARGET }}/.maintenance
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_KEY}}
@@ -30,19 +32,19 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.TARGET_TEST }}
+          TARGET: ${{ secrets.TARGET }}
           EXCLUDE: '/.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /digraph/cache/, /web/assets/'
       - name: Clear cache
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: rm -rf ${{ secrets.TARGET_TEST }}/digraph/cache/*
+          command: rm -rf ${{ secrets.TARGET }}/digraph/cache/*
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_KEY}}
       - name: Leave maintenance mode
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: rm ${{ secrets.TARGET_TEST }}/.maintenance
+          command: rm ${{ secrets.TARGET }}/.maintenance
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_KEY}}
