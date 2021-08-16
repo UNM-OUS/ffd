@@ -38,3 +38,7 @@ navigation:
       - upcoming
       - instructions
       - contact
+
+permissions:
+  url:
+    'hero/edit': [allow group editor]
