@@ -1,0 +1,46 @@
+{
+  "package": {
+    "defaults": {
+      "fields": {
+        "site_name": "First-Year Family Day"
+      }
+    }
+  },
+  "timezone": "America/Denver",
+  "users": {
+    "defaultmanager": "netid"
+  },
+  "actions": {
+    "uiforguests": false
+  },
+  "image": {
+    "driver": "gd"
+  },
+  "paths": {
+    "storage": "${paths.site}/digraph/storage",
+    "cache": "${paths.site}/digraph/cache"
+  },
+  "templates": {
+    "theme": [
+      "unm-v1"
+    ]
+  },
+  "navigation": {
+    "menus": {
+      "main": [
+        "home",
+        "past",
+        "upcoming",
+        "instructions",
+        "contact"
+      ]
+    }
+  },
+  "permissions": {
+    "url": {
+      "hero/edit": [
+        "allow group editor"
+      ]
+    }
+  }
+}

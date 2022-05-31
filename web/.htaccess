@@ -16,9 +16,10 @@ Redirect 301 /unmseal.html https://secretary.unm.edu/seal/
 # Do not edit this code, it will be replaced whenever composer update/install runs
 # digraph-project-core/files/htaccess => web/.htaccess
 
+DirectoryIndex index.html index.php
+
 # rewriting to redirect urls to digraph
 <IfModule mod_rewrite.c>
-  DirectoryIndex index.html index.php
   RewriteEngine on
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}/index.html !-f
